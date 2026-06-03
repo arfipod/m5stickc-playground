@@ -1,2 +1,11 @@
 .pio/
 .venv/
+
+dist/
+
+.vscode/*
+!.vscode/extensions.json
+
+*.bin
+*.elf
+*.map

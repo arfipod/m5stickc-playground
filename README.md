@@ -2,12 +2,23 @@
 
 Test project for the M5StickC Plus with PlatformIO.
 
+[![CI](https://github.com/arfipod/m5stickc-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/arfipod/m5stickc-playground/actions/workflows/ci.yml)
+
 ## Commands
 
 ```sh
 .venv/bin/pio run -e m5stickcplus
 .venv/bin/pio run -e m5stickcplus -t upload
 ```
+
+## CI/CD
+
+GitHub Actions builds the firmware with PlatformIO for pushes and pull requests.
+The CI workflow uploads `firmware.bin`, `firmware.elf`, `firmware.map`, and
+`SHA256SUMS` as a build artifact.
+
+Tagged pushes that match `v*`, for example `v1.0.0`, run the release workflow
+and attach the compiled firmware files to a GitHub Release.
 
 Uploads use `/dev/ttyUSB0`, configured in `platformio.ini`.
 
